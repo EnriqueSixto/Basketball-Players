@@ -1,0 +1,18 @@
+players = [180, 172, 178, 185, 190, 195, 192, 200, 210, 190]
+pb=[]
+mean=sum(players)/len(players)
+for p in range(len(players)):
+    variance=(players[p]-mean)**2
+    pb.append(variance)
+bas=sum(pb)/len(players)
+bas=(bas)**0.5
+
+print(mean)
+print("%.2f" % (bas))
+a = mean - bas
+b = mean + bas
+print("(%.2f - %.2f)" % (a,b))
+
+for i in players:
+    if i > a and i < b:
+        print(i)
